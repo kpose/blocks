@@ -8,8 +8,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Capped.sol";
 
 
-contract HystaCoin is ERC20 {
-    constructor(uint256 initialSupply) ERC20('Hysta Coin', 'HYC') {
-        _mint(msg.sender, initialSupply);
+contract HystaCoin is ERC20, Ownable {
+    constructor(uint256 totalSupply) ERC20('Hysta Coin', 'HYC') payable {
+        _mint(msg.sender, totalSupply);
     }
 }

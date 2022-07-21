@@ -72,6 +72,7 @@ typechain-types
 #Hardhat files
 cache
 artifacts
+hardhat.config.ts
 
 
 
@@ -85,4 +86,5 @@ typechain-types
 #Hardhat files
 cache
 artifacts
+hardhat.config.ts
 

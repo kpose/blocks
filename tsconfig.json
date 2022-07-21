@@ -13,6 +13,9 @@
       "./test"
     ],
   },
+  "typeRoots": [
+    "./types"
+  ],
   "include": [
     "./test",
     "./src",

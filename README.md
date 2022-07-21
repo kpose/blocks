@@ -1,24 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# blocks
-collection of blockchain dapps
-=======
-=======
->>>>>>> 655a41a (feat: install hardhat)
-# Sample Hardhat Project
+# Blocks
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+# What lies within
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
-<<<<<<< HEAD
->>>>>>> 655a41a (feat: install hardhat)
-=======
->>>>>>> 655a41a (feat: install hardhat)
+Blocks is a collection of blockchain Dapps built with React Native while leveraging Ethers.js, Solidity, Hardhat and a collection of tools.
+Each dapp lives on it's own branch, just pull and run.

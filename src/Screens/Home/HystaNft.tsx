@@ -13,12 +13,19 @@ export interface HystaNFTTokenInterface {
   symbol: string;
   amount: string;
   signer: string;
+  onPress: () => void;
 }
 
-const HystaNft = ({name, symbol, amount, signer}: HystaNFTTokenInterface) => {
+const HystaNft = ({
+  name,
+  symbol,
+  amount,
+  signer,
+  onPress,
+}: HystaNFTTokenInterface) => {
   const {width} = useWindowDimensions();
   return (
-    <Pressable>
+    <Pressable onPress={onPress}>
       <View style={[styles.container, {width: width / 3}]}>
         <View style={styles.coinContents}>
           <Text style={styles.symbol}>{symbol}</Text>

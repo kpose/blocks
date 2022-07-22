@@ -13,12 +13,19 @@ export interface HystaTokenInterface {
   symbol: string;
   amount: string;
   signer: string;
+  onPress: () => void;
 }
 
-const Hysta = ({name, symbol, amount, signer}: HystaTokenInterface) => {
+const Hysta = ({
+  name,
+  symbol,
+  amount,
+  signer,
+  onPress,
+}: HystaTokenInterface) => {
   const {width} = useWindowDimensions();
   return (
-    <Pressable>
+    <Pressable onPress={onPress}>
       <View style={[styles.container, {width: width / 3}]}>
         <View style={styles.coinContents}>
           <Text style={styles.symbol}>{symbol}</Text>

@@ -19,6 +19,7 @@ const useContract = ({
   const connector = useWalletConnect();
   const [contract, setContract] = useState<any>();
   const [signer, setSigner] = useState<any>();
+  const [contractProvider, setContractProvider] = useState<any>()
 
   const initialize = useCallback(async () => {
     if (!connector || !connector.connected) {
@@ -44,6 +45,7 @@ const useContract = ({
 
     setContract(etcontract);
     setSigner(contractSigner);
+    setContractProvider(ethers_provider);
   }, [connector, contractAbi, contractAddress, infuraId, provider]);
 
   useEffect(() => {
@@ -53,7 +55,7 @@ const useContract = ({
     initialize();
   }, [initialize, connector]);
 
-  return [contract, signer];
+  return [contract, signer, contractProvider];
 };
 
 export default useContract;

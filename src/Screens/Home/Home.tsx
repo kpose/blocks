@@ -8,21 +8,28 @@ import {HystaNonFungCoinABI} from '../../contracts/blockcontracts';
 import Hysta from './Hysta';
 import HystaNft from './HystaNft';
 import {ethers} from 'ethers';
-import {HystaTokenInterface} from './Hysta';
-import {HystaNFTTokenInterface} from './HystaNft';
 import {
   INFURA_PROJECT_ID,
   HYSTER_COIN_ADDRESS,
   HYSTER_NON_FUNG_ADDRESS,
   CHECK,
 } from '@env';
-console.log(INFURA_PROJECT_ID);
-console.log(HYSTER_COIN_ADDRESS, 'KKK');
+import {HomeScreenProps} from '../interfaces';
 
-const Home = () => {
+const Home = ({navigation}: HomeScreenProps) => {
   const connector = useWalletConnect();
-  const [hysta, setHysta] = useState<HystaTokenInterface>();
-  const [hystaNft, setHystaNft] = useState<HystaNFTTokenInterface>();
+  const [hysta, setHysta] = useState<{
+    name: string;
+    symbol: string;
+    amount: string;
+    signer: string;
+  }>();
+  const [hystaNft, setHystaNft] = useState<{
+    name: string;
+    symbol: string;
+    amount: string;
+    signer: string;
+  }>();
 
   // get instance of hysta contract
   const [contract, signer] = useContract({
@@ -137,6 +144,9 @@ const Home = () => {
             symbol={hysta.symbol}
             amount={hysta.amount}
             signer={hysta.signer}
+            onPress={() =>
+              navigation.navigate('Transact', {symbol: hysta.symbol})
+            }
           />
         )}
         {hystaNft && (
@@ -145,6 +155,9 @@ const Home = () => {
             symbol={hystaNft.symbol}
             amount={hystaNft.amount}
             signer={hystaNft.signer}
+            onPress={() =>
+              navigation.navigate('Transact', {symbol: hystaNft.symbol})
+            }
           />
         )}
       </View>

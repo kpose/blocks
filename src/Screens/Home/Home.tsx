@@ -12,7 +12,6 @@ import {
   INFURA_PROJECT_ID,
   HYSTER_COIN_ADDRESS,
   HYSTER_NON_FUNG_ADDRESS,
-  CHECK,
 } from '@env';
 import {HomeScreenProps} from '../interfaces';
 
